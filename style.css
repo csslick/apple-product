@@ -1,53 +1,73 @@
-*{ 
+*{
 	margin: 0; padding: 0;
 	box-sizing: border-box;
 }
 li{ list-style-type: none;}
 body{
-	width: 960px;
 	margin: 0 auto;
 	font-family: '맑은 고딕', Arial, sans-serif;
+	font-size: 14px;
+	color: #333;
+}
+.container{
+	width: 960px;
+	margin: 0 auto;
 }
 #location-nav{
+	width: 100%;
+	background: #eee;
 	border-bottom: 1px solid #ccc;
 	padding: 15px;
-	margin-bottom: 30px;
+	margin-bottom: 40px;
 }
 #product{
+	width: 960px;
+	margin: 0 auto;
 	overflow: hidden;
+	padding-top: 20px;
 }
 #product > .info{
 	float: left;
 	width: 320px;
 }
-#product > .info > h2{ margin-bottom: 15px;}
-.price{ 
+#product > .info > h2{
+	margin-bottom: 15px;
+	font-size: 2em;
+}
+.price{
 	display: block;
 	margin-bottom: 15px;
+	font-size: 17px;
 }
-.rank{ color: #0070c9;}
-#lang{
+.rank{
+	color: #0070c9;
+	font-size: 1.4em;
+	letter-spacing: 3px;
+
+}
+select#lang{
 	width: 100%;
+	font-size: 1em;
 	height: 34px;
 	padding: 0px 10px;
 	border-radius: 5px;
 }
-#product label{ 
+#product label{
 	display: block;
 	margin-top: 15px;
 }
-#product label > span{ 
+#product label > span{
 	display: block;
 	padding: 15px 0;
 }
 #product .btn-wrap{
-	margin-top: 20px;
+	margin-top: 40px;
 /*			border: 1px solid red;*/
 }
-#product .btn-wrap span{
+#product .btn-wrap .far{
 	float: right;
-	font-size: 26px;
-	line-height: 26px;
+	font-size: 24px;
+	line-height: 1.5em;
 	color:  #0070c9;
 }
 .btn{
@@ -65,13 +85,14 @@ body{
 	width: 88%;
 	padding-top: 3px;
 	padding-bottom: 4px;
-	text-align: center;		
+	text-align: center;
 }
-.chat-content{ 
-	margin: 20px 0;
-	padding: 15px 0;
+.chat-content{
+	margin: 30px 0;
+	padding: 30px 0;
 	border-top: 1px solid #ccc;
 }
+.chat-content a{ color: #0070c9;}
 
 /* 우측 제품 사진 영역*/
 .photo {
@@ -80,3 +101,29 @@ body{
 	text-align: center;
 }
 .photo .large-img{ width: 520px;}
+.photo > .items > li{
+	display: inline-block;
+	margin: 0 10px;
+}
+/* items 사진썹네일 밑줄 효과 */
+.photo > .items a{
+	display: block;
+}
+.photo > .items a.on{
+	border-bottom: 2px solid #ccc;
+}
+
+
+/* 목록 화살표 커스터마이징 */
+select{
+	-webkit-appearance: none; /* 화살표 없애기 for chrome*/
+	-moz-appearance: none;    /* 화살표 없애기 for firefox*/
+	appearance: none;         /* 화살표 없애기 공통*/
+	background-image: url(https://www.materialui.co/materialIcons/hardware/keyboard_arrow_down_grey_192x192.png);
+	background-repeat: no-repeat;
+	background-size: 24px;
+	background-position: 98% 60%;
+}
+select::-ms-expand {
+   display: none;            /* 화살표 없애기 for IE10, 11*/
+}
