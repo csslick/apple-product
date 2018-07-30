@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>product</title>
+	<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+	<nav id="location-nav">
+		<h1>iPad 액세서리</h1>
+		<a href="#">모두 검색 ▽</a>
+	</nav>
+	
+	<section id="product">
+		<div class="info">
+			<h2>12.9형 iPad Pro용 Smart Keyboard - 한국어</h2>
+			<span class="price">￦229,000</span>
+			<span class="rank">★★★★★</span>
+			<label><span>언어</span>
+				<select name="lang" id="lang">
+					<option value="cn">중국어</option>
+					<option value="ja">일본어</option>
+					<option value="ko" selected>한국어</option>
+					<option value="en">영어</option>
+				</select>
+			</label>
+			<div class="btn-wrap">
+				<button class='btn submit'>장바구니에 담기</button>
+				<a href="#" title='즐겨찾기 추가'><span>♡</span></a>
+			</div>	
+			<div class="chat-content">
+				<p>제품 구입에 필요한 도움을 받아보세요.  
+					<a href="#">지금 채팅하기 </a></p>
+				<p><span>080-330-8877</span>에 전화로 문의하세요.</p>
+			</div>
+		</div><!-- end info(left side) -->
+		
+		<div class="photo">
+			<img class='large-img' src="images/front.jpg" alt="전면">
+			<ul class="items">
+				<li><a href="images/front.jpg"><img src="images/front_small.jpg" alt="전면"></a></li>
+				<li><a href="images/side.jpg"><img src="images/side_small.jpg" alt="측면1"></a></li>
+				<li><a href="images/side3.jpg"><img src="images/side3_small.jpg" alt="측면2"></a></li>
+				<li><a href="images/side4.jpg"><img src="images/side4_small.jpg" alt="측면3"></a></li>												
+			</ul>
+		</div><!-- end photo -->	
+	</section>
+	
+	<script>
+		var product = [
+			{
+				title: '12.9형 iPad Pro용 Smart Keyboard - 중국어(병음)',
+				price: '￦200,000',
+				rank: '★★★☆☆☆'
+			},
+			{
+				title: '12.9형 iPad Pro용 Smart Keyboard - 일본어',
+				price: '￦190,000',
+				rank: '★★★★☆'
+			},
+			{
+				title: '12.9형 iPad Pro용 Smart Keyboard - 한국어',
+				price: '￦229,000',
+				rank: '★★★★★'
+			},
+			{
+				title: '12.9형 iPad Pro용 Smart Keyboard - 미국 영어',
+				price: '￦200,000',
+				rank: '★★★☆☆'
+			}			
+		];
+		
+		
+		$(function(){
+			var i = $('#lang option:selected').index();
+			
+			console.log(i);
+			$('#lang').change(function(){
+				i = $(':selected', this).index();
+				console.log(i);
+				$('.info > h2').html(product[i].title);
+				$('.info > .price').html(product[i].price);
+				$('.info > .rank').html(product[i].rank);
+			});
+		});
+	
+	</script>
+	
+</body>
+</html>
